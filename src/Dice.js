@@ -6,7 +6,10 @@ const Dice =(props)=>{
     }
     return (
         <main>
-            <div style={styles} className="die">
+            <div 
+            style={styles}
+            onClick={props.onClick} 
+            className="die">
                 <h4>
                 {props.value}
                 </h4>

@@ -6,7 +6,7 @@ const App =()=>{
   const generateNewDie =()=>{
     return {
       value: Math.floor(Math.random() * 6 ) + 1,
-      isHeld: true,
+      isHeld: false,
       id: nanoid()
     }
   } 
@@ -20,18 +20,35 @@ const App =()=>{
   
   
   const [dice,setDice] = React.useState(dieValue())
-  
+  console.log(dice)
 
   
+  const holdDice =(id)=>{
+    setDice(prevDice => prevDice.map(die=>
+      id === die.id? 
+      {...die,
+      isHeld:!die.isHeld}:
+      die
+      ))
+  }
+
   const diceElements = dice.map(
     die => <Dice 
         key = {die.id}
         isHeld = {die.isHeld} 
         value = {die.value}
-        id={die.id}/>   
+        id={die.id}
+        onClick={()=>holdDice(die.id)}/>   
       
     )
 
+  const rollDice=()=>{
+    setDice(prevDice => prevDice.map(die=>
+      die.isHeld?
+      die :
+      generateNewDie()
+      ))
+  }
   
   
   return(
@@ -39,11 +56,15 @@ const App =()=>{
       <div className="app-body">
         <h2>Tenzies</h2>
         <p>Roll until all dice are same. Click each die to freeze it at its current value between rolls.</p>
-        <div className="die-body">
+        <div 
+        className="die-body"
+        >
           {diceElements}    
         </div>
 
-        <button className="btn"> 
+        <button
+          onClick={rollDice}
+         className="btn"> 
           Roll
         </button>
 
