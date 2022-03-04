@@ -1,23 +1,70 @@
 * {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body {
   background-color: #0b2434;
 }
 
+/* main {
+  /* margin: 50px; 
+} */
+.app-body {
+  background-color: #ffffff;
+  height: 580px;
+  max-width: 1000px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  top: 40px;
+  left: 220px;
+}
 .die {
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.app-body {
-  margin: 50px;
-  background-color: #ffffff;
-  width: 90vw;
-  height: 90vh;
-  border-radius: 10px;
+p {
+  font-size: 1.4rem;
+  text-align: center;
+  width: 350px;
+}
+h2 {
+  font-size: 2.4rem;
+}
+h4 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.die-body {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 25px;
+  /* width: 800px; */
+}
+
+.btn {
+  background-color: #5035ff;
+  color: #ffffff;
+  padding: 15px;
+  width: 150px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #3112f8;
 }
