@@ -11,7 +11,7 @@ const Dice =(props)=>{
             onClick={props.onClick} 
             className="die">
                 <h4>
-                {props.value}
+                    {props.value}
                 </h4>
             
             </div>

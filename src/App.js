@@ -20,9 +20,20 @@ const App =()=>{
   
   
   const [dice,setDice] = React.useState(dieValue())
-  console.log(dice)
+  const [tenzies,setTenzies] = React.useState(false)
 
-  
+  React.useEffect( ()=>{
+    const allHeld = dice.every(die=> die.isHeld)
+    const firstValue = dice[0].value
+    const allValue = dice.every(die=>die.value===firstValue)
+    if(allHeld && allValue){
+      console.log("You Won!!")
+      setTenzies(true)
+    }else{
+      setTenzies(false)
+    }
+  },
+  [dice])
   const holdDice =(id)=>{
     setDice(prevDice => prevDice.map(die=>
       id === die.id? 
@@ -43,11 +54,15 @@ const App =()=>{
     )
 
   const rollDice=()=>{
-    setDice(prevDice => prevDice.map(die=>
+    if(!tenzies)
+    {setDice(prevDice => prevDice.map(die=>
       die.isHeld?
       die :
       generateNewDie()
-      ))
+      ))}else{
+        setTenzies(false)
+        setDice(dieValue())
+      }
   }
   
   
@@ -65,7 +80,7 @@ const App =()=>{
         <button
           onClick={rollDice}
          className="btn"> 
-          Roll
+          {tenzies? "New Game" : "Roll"}
         </button>
 
       </div>
