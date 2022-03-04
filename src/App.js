@@ -1,6 +1,7 @@
 import React from "react";
 import Dice from "./Dice";
-import {nanoid} from "nanoid"
+import {nanoid} from "nanoid";
+import Confetti from "react-confetti"
 
 const App =()=>{
   const generateNewDie =()=>{
@@ -76,7 +77,7 @@ const App =()=>{
         >
           {diceElements}    
         </div>
-
+        {tenzies && <Confetti/>}
         <button
           onClick={rollDice}
          className="btn"> 
