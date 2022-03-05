@@ -6,7 +6,7 @@ import Confetti from "react-confetti"
 const App =()=>{
   const generateNewDie =()=>{
     return {
-      value: Math.floor(Math.random() * 1 ) + 1,
+      value: Math.floor(Math.random() * 6 ) + 1,
       isHeld: false,
       id: nanoid()
     }

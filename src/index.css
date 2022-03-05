@@ -18,7 +18,7 @@ body {
 .app-body {
   background-color: #ffffff;
   height: 620px;
-  max-width: 1000px;
+  width: 800px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -79,4 +79,86 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+  .app-body {
+    height: 500px;
+    width: 500px;
+  }
+
+  .die {
+    height: 50px;
+    width: 50px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 350px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  h3 {
+    font-size: 0.8rem;
+  }
+  h5 {
+    font-size: 0.6rem;
+  }
+  .navbar {
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .app-body {
+    height: 500px;
+    width: 500px;
+  }
+
+  .die {
+    height: 50px;
+    width: 50px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 350px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  h3 {
+    font-size: 0.8rem;
+  }
+  h5 {
+    font-size: 0.6rem;
+  }
+  .navbar {
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-body {
+    width: 360px;
+  }
+  .die {
+    height: 40px;
+    width: 40px;
+  }
 }
