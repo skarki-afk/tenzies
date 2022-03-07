@@ -1,7 +1,9 @@
 # Tenzies
 
 > Tenzies is a game which have 10 dice and to win this game all the dice should have same number.
-> <br/> > <br/>
+
+<br/> 
+<br/>
 
 ## Functions that were used to make this game
 
@@ -9,31 +11,31 @@
 
 1.  generateNewDie() :
 
-        > It is a function which holds the object for making new dice.
+    > It is a function which holds the object for making new dice.
 
     <br/>
 
 2.  dieValue() :
 
-        > It is a funtion that allows the function `rollDice()` to run.
+    > It is a funtion that allows the function `rollDice()` to run.
 
     <br/>
 
 3.  holdDice() :
 
-        > With the help of this function, clicked die will not roll.
+    > With the help of this function, clicked die will not roll.
 
     <br/>
 
 4.  rollDice() :
 
-        > This function only rolls the dice which are not held.
+    > This function only rolls the dice which are not held.
 
     <br/>
 
 5.  countScore():
 
-        > This function was introduced to count the score to show your result.
+    > This function was introduced to count the score to show your result.
 
     <br/>
 
