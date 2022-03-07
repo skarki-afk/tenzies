@@ -64,10 +64,6 @@ const App =()=>{
     localStorage.setItem("scores",JSON.stringify(highScore))
     },[highScore])
 
-  
-
-  
-
   const holdDice =(id)=>{
     setDice(prevDice => prevDice.map(die=>
       id === die.id? 
