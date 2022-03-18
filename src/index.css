@@ -24,6 +24,21 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  /* color: white; */
+  /* position: relative;
+  top: 20px;
+  left: 220px; */
+}
+.dark {
+  background-color: rgba(34, 34, 34, 0.692);
+  height: 620px;
+  width: 800px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
   /* position: relative;
   top: 20px;
   left: 220px; */
@@ -81,6 +96,42 @@ h4 {
   justify-content: space-between;
 }
 
+.toggle-btn {
+  display: flex;
+  align-items: center;
+}
+
+.toggle {
+  height: 10px;
+  width: 30px;
+  margin-left: 5px;
+  border-radius: 5px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-ball-left {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  /* cursor: pointer; */
+  left: -1px;
+  transition: all 0.3s ease-in;
+}
+
+.toggle-ball-right {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  /* cursor: pointer; */
+  right: -1px;
+}
+
 @media only screen and (max-width: 800px) {
   .app-body {
     height: 500px;
@@ -119,8 +170,8 @@ h4 {
 
 @media only screen and (max-height: 650px) {
   .app-body {
-    height: 500px;
-    width: 500px;
+    height: 550px;
+    width: 550px;
   }
 
   .die {

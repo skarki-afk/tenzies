@@ -24,6 +24,7 @@ const App =()=>{
   const [tenzies,setTenzies] = React.useState(false)
   const [score,setScore] = React.useState(0)
   const [highScore,setHighScore]= React.useState([])
+  const [dark,setDark] = React.useState(false)
 
  
 
@@ -34,7 +35,7 @@ const App =()=>{
     if(allHeld && allValue){
       setTenzies(true)
       console.log(score)
-      highScore.push(score)
+      // highScore.push(score)
     }else{
       setTenzies(false)
     }
@@ -53,16 +54,16 @@ const App =()=>{
   // },
   // [dice])
 
-  React.useEffect (()=>{
-    const scores = JSON.parse(localStorage.getItem("scores"))
-    if(scores){
-      setHighScore(scores)
-    }
-  },[])
+  // React.useEffect (()=>{
+  //   const scores = JSON.parse(localStorage.getItem("scores"))
+  //   if(scores){
+  //     setHighScore(scores)
+  //   }
+  // },[])
 
-  React.useEffect (()=>{
-    localStorage.setItem("scores",JSON.stringify(highScore))
-    },[highScore])
+  // React.useEffect (()=>{
+  //   localStorage.setItem("scores",JSON.stringify(highScore))
+  //   },[highScore])
 
   const holdDice =(id)=>{
     setDice(prevDice => prevDice.map(die=>
@@ -80,7 +81,8 @@ const App =()=>{
        isHeld = {die.isHeld} 
        value = {die.value}
       id={die.id}
-      onClick={()=>holdDice(die.id)}/>   
+      onClick={()=>holdDice(die.id)}
+      dark={dark}/>   
       
   )
 
@@ -108,13 +110,27 @@ const App =()=>{
     // <h5>High Score:{highScoreNum}{highScoreNum > 1? "turns":"turn"}</h5> 
   // console.log(highScore)
     // console.log(typeof highScore)
+    const styles = {
+      backgroundColor: dark? "white" : "black"
+    }
+    const toggleBallStyle ={
+      backgroundColor: dark? "black" : "white"
+    }
 
+    const darkMode =()=>{
+      setDark(prevDark=>!prevDark)
+    }
   return(
       <div className="main">
-        <div className="app-body">
+        <div className={dark? "dark" : "app-body" }>
           <div className="navbar">
             <h3>Your Score: {score} {score>1?"turns":"turn"}</h3>
-            <h5>High Score: </h5>
+            <div className="toggle-btn">
+              <span>Dark Mode:</span>
+              <span className="toggle" onClick={darkMode} style={styles}>
+                <span className={dark? "toggle-ball-left":"toggle-ball-right"} style={toggleBallStyle}></span>
+              </span>
+            </div>
           </div>
           <h2>Tenzies</h2>
           <p>{tenzies? "You Won!!!":"Roll until all dice are same. Click each die to freeze it at its current value between rolls."}</p>

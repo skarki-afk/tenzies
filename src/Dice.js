@@ -2,7 +2,7 @@ import React from "react";
 
 const Dice =(props)=>{
     const styles = {
-        backgroundColor: props.isHeld? "#59E391":"#dad8d8"
+        backgroundColor:  props.dark ? props.isHeld? "#4c5aff":"black" : props.isHeld? "#59E391":"#dad8d8"
     }
     return (
         <main>
